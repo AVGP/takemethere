@@ -1,0 +1,20 @@
+{
+    "version": "1",
+    "name": "TakeMeThere",
+    "launch_path": "/index.html",
+    "description": "Swiss public transport",
+    "developer": {
+        "name": "Martin Naumann",
+        "url": "https://avgp.github.io/takemethere/"
+    },
+    "installs_allowed_from": ["*"],
+    "default_locale": "en",
+    "permissions": {
+        "desktop-notification": {
+            "description" : "To show notifications"
+        },
+        "geolocation": {
+            "description" : "Marking out user location"
+        }
+    }
+}
