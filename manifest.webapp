@@ -1,7 +1,7 @@
 {
     "version": "1",
     "name": "TakeMeThere",
-    "launch_path": "/index.html",
+    "launch_path": "/takemethere/index.html",
     "description": "Swiss public transport",
     "developer": {
         "name": "Martin Naumann",
