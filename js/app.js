@@ -1,3 +1,1 @@
-if(!navigator.mozAlarms) {
-    alert("Oh shit :(");
-}
+modules.installButton("installMe");
