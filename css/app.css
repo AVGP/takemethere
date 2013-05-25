@@ -1,0 +1,14 @@
+legend {
+    font-size: 5vw;
+}
+
+.block { display:block; }
+
+li {
+    border-bottom: 2px dashed #8ac;
+    padding-left: 10px;
+}
+
+.centered {
+    text-align: center;
+}

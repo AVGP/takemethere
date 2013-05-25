@@ -11,7 +11,7 @@ function createNotification() {
 
 document.getElementById("go").onclick = function() {
     
-    if(notifications) {
+    if(notifications && window.webkitNotifications) {
         window.webkitNotifications.requestPermission();   
     }
     
@@ -40,7 +40,7 @@ document.getElementById("go").onclick = function() {
                   }
                   if(connections[i].products && connections[i].products.length > 1) {
                       listItem.innerHTML += " with " + (connections[i].products.length-1)
-                        + "change" + (connections[i].products.length > 2 ? 's' : '');
+                        + " change" + (connections[i].products.length > 2 ? 's' : '');
                   }
                   listItem.innerHTML += " (" + connections[i].products.join(",") +  ")";
                   listItem.onclick = function() {
