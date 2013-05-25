@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/foundation.min.css" />
         <script type="text/javascript" src="js/installButton.js"></script>
         <script type="text/javascript" src="js/zepto.min.js"></script>
         <script type="text/javascript" src="js/moment.min.js"></script>
@@ -11,11 +12,14 @@
         <title>Firefox OS Boilerplate App</title>
     </head>
     <body>
+        <div></div> 
         <button id="installMe" style="display: none">Install me!</button>
         <div>
-            Give me connections to
-            <input id="destination" />
-            <button id="go">now!</button>
+            <legend>Give me connections to</legend>
+            <fieldset>
+                <input id="destination" />
+                <button id="go">now!</button>
+            </fieldset>
         </div>
         <ul id="connections"></ul>
         <script type="text/javascript" src="js/app.js"></script>

@@ -1,6 +1,20 @@
 modules.installButton("installMe");
 
+var notifications = navigator.mozNotification || window.webkitNotifications;
+function createNotification() {
+    notifications.createNotification(
+        'favicon.ico',
+        'Leave now!',
+        'You have to leave now to be on time!'
+    ).show();    
+}
+
 document.getElementById("go").onclick = function() {
+    
+    if(notifications) {
+        window.webkitNotifications.requestPermission();   
+    }
+    
     var destinationText = document.getElementById("destination").value;  
     
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -22,13 +36,20 @@ document.getElementById("go").onclick = function() {
                   var listItem = document.createElement("li");
                   listItem.innerHTML = moment(connections[i].from.departure).fromNow();
                   if(connections[i].from.platform) {
-                      listItem.innerHTML += "on platform " + connections[i].from.platform;
+                      listItem.innerHTML += " from platform " + connections[i].from.platform;
                   }
-                  listItem.innerHTML += " with " + (connections[i].products.length-1) + "change" + (connections[i].products.length > 1 ? 's' : '')
-                    + " (" + connections[i].products.join(",") +  ")";
+                  if(connections[i].products && connections[i].products.length > 1) {
+                      listItem.innerHTML += " with " + (connections[i].products.length-1)
+                        + "change" + (connections[i].products.length > 2 ? 's' : '');
+                  }
+                  listItem.innerHTML += " (" + connections[i].products.join(",") +  ")";
+                  listItem.onclick = function() {
+                      setTimeout(createNotification,15000);
+                  };
+
                   container.appendChild(listItem);
-                  console.log(connections[i]);
               }
+              console.log(connections);
           });
       });
     });
