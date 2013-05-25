@@ -28,6 +28,9 @@ document.getElementById("go").onclick = function() {
             name: document.getElementById("destination").value
           })
           .then(function(stations) {
+              if(!stations || stations.length < 1) {
+                  alert("Sorry, I don't know where you are :(");
+              }
               var dest = stations[0];
               return modules.transportation.getConnections(start.id, dest.id);
           })
