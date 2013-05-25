@@ -11,10 +11,10 @@
     "default_locale": "en",
     "permissions": {
         "desktop-notification": {
-            "description" : "To show notifications"
+            "description" : "To show notifications about when to leave"
         },
         "geolocation": {
-            "description" : "Marking out user location"
+            "description" : "Getting the start location of the journey"
         }
     }
 }
