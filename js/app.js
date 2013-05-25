@@ -18,6 +18,7 @@ document.getElementById("go").onclick = function() {
     var destinationText = document.getElementById("destination").value;  
     
     navigator.geolocation.getCurrentPosition(function(position) {
+      console.log(position.coords.latitude, position.coords.longitude);
       modules.transportation.getClosestStation({
           lat: position.coords.latitude, 
           lng: position.coords.longitude
